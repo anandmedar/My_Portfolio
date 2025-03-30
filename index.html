@@ -350,7 +350,7 @@
             <input type="email" id="email" name="email" placeholder="Email" required>
             <input type="text" id="subject" name="subject" placeholder="Subject" required>
             <textarea id="message" name="message" placeholder="Message..." required></textarea>
-            <input class="btn" type="submit" value="Send Gmail">
+            <input class="btn" type="submit" value="Send Gmail" style="cursor: pointer;">
           </form>
         
           <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -369,6 +369,7 @@
                     message: document.getElementById("message").value
                 }).then(function(response) {
                     alert("Email sent successfully!");
+                    document.getElementById("contact-form").reset();
                 }, function(error) {
                     alert("Failed to send email: " + JSON.stringify(error));
                 });
